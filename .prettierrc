@@ -1,0 +1,11 @@
+{
+    "useTabs": false,
+    "tabWidth": 4,
+    "trailingComma": "all",
+    "arrayExpand": true,
+    "spaceBeforeFunctionParen": true,
+    "printWidth": 80,
+    "arrowParens": false,
+    "singleQuote": true,
+    "bracesSpacing": true
+}

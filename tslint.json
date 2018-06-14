@@ -1,0 +1,15 @@
+{
+    "extends": [
+        "tslint:recommended",
+        "tslint-config-prettier"
+    ],
+    "rules": {
+        "ordered-imports": false
+    },
+    "linterOptions": {
+        "exclude": [
+            "**/*.spec.*",
+            "**/__{tests,mocks}__/**"
+        ]
+    }
+}

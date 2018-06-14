@@ -1,0 +1,24 @@
+{
+    /**
+    * Prettier
+    **/
+
+    // Use spaces for indentation
+    "prettier.useTabs": false,
+
+    // Always add a trailing comma
+    "prettier.trailingComma": "all",
+
+    // Where applicable, expand array literals onto multiple lines
+    "prettier.arrayExpand": true,
+
+    // Keep one space between the name of a function and its parenthesis
+    "prettier.spaceBeforeFunctionParen": true,
+
+    // Keep line length to ~80 characters
+    "prettier.printWidth": 80,
+
+    // Do not force arrow functions to have parenthesis around its arguments
+    "prettier.arrowParens": false,
+    "git.ignoreLimitWarning": true,
+}

@@ -1,0 +1,7 @@
+{
+    "src/**/*.ts": [
+        "tslint --project . -e \"**/__{tests,mocks}__/**\" -e \"**/*.spec.*\"",
+        "prettier --parser typescript --write",
+        "git add"
+    ]
+}

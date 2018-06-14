@@ -1,0 +1,59 @@
+{
+    "name": "@starters/typescript",
+    "version": "0.0.0-development",
+    "description": "Get your next TypeScript project started!",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "author": "Jake Hamilton <jehamilton122@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jakehamilton/starter-typescript"
+    },
+    "license": "MIT",
+    "scripts": {
+        "build": "yarn run build:clean && yarn run build:code",
+        "build:code": "tsc",
+        "build:clean": "rimraf dist/*",
+        "test": "jest --coverage --verbose --config jest.config.json",
+        "test:watch": "jest --watch --notify --config jest.config.json",
+        "docs": "yarn run docs:build",
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs",
+        "chore:lint": "tslint --project .",
+        "chore:format": "prettier --write src/**/*.ts",
+        "chore:deploy": "travis-deploy-once",
+        "chore:release": "semantic-release",
+        "chore:setup": "figlet -f \"Small Slant\" \"Setup\" && npx semantic-release-cli setup",
+        "commit": "git-cz",
+        "precommit": "lint-staged"
+    },
+    "engines": {
+        "node": ">=6.0.0",
+        "yarn": "^1.5.1"
+    },
+    "devDependencies": {
+        "@types/jest": "^23.1.0",
+        "commitizen": "^2.10.1",
+        "cz-conventional-changelog": "^2.1.0",
+        "figlet-cli": "^0.1.0",
+        "husky": "^0.14.3",
+        "jest": "21.2.1",
+        "lint-staged": "^7.2.0",
+        "opn-cli": "^3.1.0",
+        "prettier-miscellaneous": "^1.5.3",
+        "rimraf": "^2.6.2",
+        "semantic-release": "^15.5.2",
+        "ts-jest": "^22.4.6",
+        "ts-loader": "^4.4.1",
+        "tslint": "^5.10.0",
+        "tslint-config-prettier": "^1.13.0",
+        "typedoc": "^0.11.1",
+        "typescript": "^2.9.2",
+        "vuepress": "^0.10.1",
+        "webpack": "^4.12.0",
+        "travis-deploy-once": "^5.0.0"
+    },
+    "dependencies": {
+        "@types/node": "^10.3.3"
+    }
+}
