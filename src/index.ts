@@ -17,6 +17,15 @@ program.version(
 
 program
     .command('create <name> [where]', 'Create a new project using a template')
-    .action(create);
+    .action((...args) => {
+        // I fucking hate Windows
+        if (args.length < 4) {
+            // @ts-ignore
+            create(...args[0].trim().split(' '));
+        } else {
+            // @ts-ignore
+            create(...args);
+        }
+    });
 
 program.parse(process.argv);
