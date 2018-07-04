@@ -17,6 +17,9 @@
     "bin": {
         "starter": "dist/index.js"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "build": "yarn run build:clean && yarn run build:code",
         "build:code": "tsc",
