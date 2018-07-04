@@ -4,6 +4,11 @@
     "collectCoverageFrom": [
         "**/*.ts"
     ],
+    "coveragePathIgnorePatterns": [
+        "/node_modules/",
+        "__mocks__",
+        "\\.d\\.ts$"
+    ],
     "coverageThreshold": {
         "global": {
             "branches": 80,
@@ -19,6 +24,7 @@
         "ts",
         "tsx"
     ],
+    "mapCoverage": true,
     "resetMocks": true,
     "rootDir": "src",
     "testEnvironment": "node",
