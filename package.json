@@ -32,7 +32,7 @@
         "chore:lint": "tslint --project .",
         "chore:format": "prettier --write src/**/*.ts",
         "chore:deploy": "travis-deploy-once",
-        "chore:release": "semantic-release",
+        "chore:release": "yarn run build && semantic-release",
         "chore:setup": "figlet -f \"Small Slant\" \"Setup\" && npx semantic-release-cli setup",
         "commit": "git-cz",
         "precommit": "lint-staged"
