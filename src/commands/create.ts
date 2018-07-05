@@ -41,6 +41,8 @@ interface IStarter {
         options: {
             inquirer: inquirer.Inquirer;
             render: typeof render;
+            fs: typeof fs;
+            rimraf: typeof rimraf;
             where: string;
         },
     ) => void;
@@ -206,11 +208,29 @@ export default async (
         if (starter.entry) {
             log.write(`  🏃 Running setup script`);
 
-            starter.entry({ inquirer, render, where });
+            starter.entry({ inquirer, render, fs, rimraf, where });
 
             log.write(`✔ 🏃 Ran setup script`);
             log.clear();
         }
+
+        log.write(`  🗄 Tidying up`);
+
+        try {
+            await rm(path.resolve(template.location, '.git'));
+        } catch (error) {
+            log.write(`  🗄 Failed tidying up`);
+            fail(
+                ERROR_RMDIR,
+                `Could not remove directory at ${path.resolve(
+                    template.location,
+                    '.git',
+                )} due to an error:\n${JSON.stringify(error, null, 2)}`,
+            );
+        }
+
+        log.write(`✔ 🗄 Tidied up`);
+        log.clear();
 
         log.write(`🎉 Done!`);
         log.clear();
