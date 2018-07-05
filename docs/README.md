@@ -40,7 +40,7 @@ A GitHub template is simply a repository that will be cloned onto the user's mac
 
 ##### .starter/index.js
 
-```shell
+```typescript
 const path = require('path');
 
 module.exports = function ({ inquirer, render, where }) {
