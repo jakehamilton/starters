@@ -32,7 +32,9 @@ interface ICreateCommand {
 
 interface ICreator {
     location: string;
-    module?: (options: { where: string }) => void | { repository: string };
+    module?:
+        | ((options: { where: string }) => Promise<any> | void)
+        | { repository: string };
     package?: {};
 }
 
@@ -208,7 +210,7 @@ const create = async (
         if (starter.entry) {
             log.write(`  🏃 Running setup script`);
 
-            starter.entry({ inquirer, render, fs, rimraf, where });
+            await starter.entry({ inquirer, render, fs, rimraf, where });
 
             log.write(`✔ 🏃 Ran setup script`);
             log.clear();
@@ -283,7 +285,7 @@ const create = async (
         log.write(`  👷 Running configuration`);
 
         if (typeof creator.module === 'function') {
-            creator.module({
+            await creator.module({
                 where,
             });
         }
@@ -299,7 +301,7 @@ const create = async (
             }
         }
 
-        log.write(`✔ 👷 Running configuration`);
+        log.write(`✔ 👷 Ran configuration`);
         log.clear();
 
         log.write(`🎉 Done!`);
