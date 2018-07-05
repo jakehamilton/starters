@@ -209,6 +209,7 @@ const create = async (
 
         if (starter.entry) {
             log.write(`  🏃 Running setup script`);
+            log.clear();
 
             await starter.entry({ inquirer, render, fs, rimraf, where });
 
@@ -283,6 +284,7 @@ const create = async (
         log.clear();
 
         log.write(`  👷 Running configuration`);
+        log.clear();
 
         if (typeof creator.module === 'function') {
             await creator.module({
