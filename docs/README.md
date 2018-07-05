@@ -25,7 +25,7 @@ starter create <template> [<where>]
 The `<template>` argument is either:
 
 + An npm package name (eg. `@starters/typescript`)
-+ A GitHub username and repository (eg. `jakehamilton/starter-typescript`)
++ A GitHub username and repository (eg. `jakehamilton/starter-typescript-template`)
 
 The `<where>` argument is an optional path to where the template should be installed.
 
