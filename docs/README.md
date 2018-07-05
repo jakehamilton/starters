@@ -74,13 +74,17 @@ The exported function receives an options argument with the following type signa
 ```typescript
 interface options {
     inquirer: Inquirer;
-    render: (path: string, data: object, options: object) => Promise;
+    render: RenderInPlace;
+    fs: FS;
+    rimraf: Rimraf;
     where: string;
 }
 ```
 
 `inquirer` is from the [inquirer](https://www.npmjs.com/package/inquirer) module.  
 `render` is from the [render-in-place](https://www.npmjs.com/package/render-in-place) module.
+`fs` is from the [fs-extra](https://www.npmjs.com/package/fs-extra) module.
+`rimraf` is from the [rimraf](https://www.npmjs.com/package/rimraf) module.
 
 ## npm templates
 
