@@ -32,7 +32,7 @@ interface ICreateCommand {
 
 interface ICreator {
     location: string;
-    module?: (options: { where: string }) => void;
+    module?: (options: { where: string }) => void | { repository: string };
     package?: {};
 }
 
@@ -76,8 +76,8 @@ const pacman: IPacMan = {
     },
 };
 
-export default async (
-    create: 'create',
+const create = async (
+    subcommand: 'create',
     name: string,
     where: string,
     command: ICreateCommand,
@@ -282,11 +282,29 @@ export default async (
 
         log.write(`  👷 Running configuration`);
 
-        creator.module!({
-            where,
-        });
+        if (typeof creator.module === 'function') {
+            creator.module({
+                where,
+            });
+        }
+
+        if (typeof creator.module === 'object') {
+            if ((creator.module as any).repository) {
+                await create(
+                    subcommand,
+                    (creator.module as any).repository,
+                    where,
+                    command,
+                );
+            }
+        }
 
         log.write(`✔ 👷 Running configuration`);
         log.clear();
+
+        log.write(`🎉 Done!`);
+        log.clear();
     }
 };
+
+export default create;
