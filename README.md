@@ -82,9 +82,9 @@ interface options {
 ```
 
 `inquirer` is from the [inquirer](https://www.npmjs.com/package/inquirer) module.  
-`render` is from the [render-in-place](https://www.npmjs.com/package/render-in-place) module.
-`fs` is from the [fs-extra](https://www.npmjs.com/package/fs-extra) module.
-`rimraf` is from the [rimraf](https://www.npmjs.com/package/rimraf) module.
+`render` is from the [render-in-place](https://www.npmjs.com/package/render-in-place) module.  
+`fs` is from the [fs-extra](https://www.npmjs.com/package/fs-extra) module.  
+`rimraf` is from the [rimraf](https://www.npmjs.com/package/rimraf) module.  
 
 ## npm templates
 
