@@ -39,15 +39,13 @@ interface ICreator {
 }
 
 interface IStarter {
-    entry?: (
-        options: {
-            inquirer: inquirer.Inquirer;
-            render: typeof render;
-            fs: typeof fs;
-            rimraf: typeof rimraf;
-            where: string;
-        },
-    ) => void;
+    entry?: (options: {
+        inquirer: inquirer.Inquirer;
+        render: typeof render;
+        fs: typeof fs;
+        rimraf: typeof rimraf;
+        where: string;
+    }) => void;
 }
 
 interface IPacMan {
@@ -62,12 +60,12 @@ const pacman: IPacMan = {
     manager: exists('yarn') ? 'yarn' : 'npm',
 
     // @ts-ignore
-    get command () {
+    get command() {
         return which(this.manager);
     },
 
     // @ts-ignore
-    get install () {
+    get install() {
         switch (this.manager) {
             case 'yarn':
                 return 'add';
@@ -96,8 +94,8 @@ const create = async (
         name: name.split('/').length > 1 ? name.split('/')[1] : name,
         location: where
             ? path.isAbsolute(where)
-              ? where
-              : path.resolve(process.cwd(), where)
+                ? where
+                : path.resolve(process.cwd(), where)
             : path.resolve(
                   process.cwd(),
                   name.split('/').length > 1 ? name.split('/')[1] : name,
@@ -135,11 +133,9 @@ const create = async (
             log.clear();
             fail(
                 ERROR_RMDIR,
-                `Could not remove directory at ${creator.location} due to an error:\n${JSON.stringify(
-                    error,
-                    null,
-                    2,
-                )}`,
+                `Could not remove directory at ${
+                    creator.location
+                } due to an error:\n${JSON.stringify(error, null, 2)}`,
             );
         }
 
@@ -241,11 +237,12 @@ const create = async (
         // Full control configuration via npm module
         log.write(`  📦 Installing custom configuration`);
 
-        const {
-            stdout,
-        } = await exec(`${await pacman.command} ${pacman.install} ${name}`, {
-            cwd: cache,
-        });
+        const { stdout } = await exec(
+            `${await pacman.command} ${pacman.install} ${name}`,
+            {
+                cwd: cache,
+            },
+        );
 
         log.write(`✔ 📦 Installed custom configuration`);
 
