@@ -1,0 +1,28 @@
+{
+    "name": "@starters/core",
+    "version": "1.0.0",
+    "description": "",
+    "license": "",
+    "author": "",
+    "main": "src/index.js",
+    "keywords": [],
+    "files": [
+        "src",
+        "dist",
+        "README.md"
+    ],
+    "dependencies": {
+        "@littlethings/log": "^2.3.0",
+        "is-url": "latest",
+        "kleur": "latest",
+        "render-in-place": "^1.0.2",
+        "inquirer": "^7.3.3",
+        "rimraf": "^3.0.2",
+        "npm": "^7.3.0",
+        "homedir": "^0.6.0",
+        "npm-which": "^3.0.1"
+    },
+    "devDependencies": {},
+    "optionalDependencies": {},
+    "peerDependencies": {}
+}
