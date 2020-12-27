@@ -1,11 +1,16 @@
 {
     "name": "@starters/core",
     "version": "1.0.0",
-    "description": "",
-    "license": "",
-    "author": "",
+    "description": "The core logic for managing templates.",
+    "license": "Apache-2.0",
+    "author": "Jake Hamilton <jake.hamilton@hey.com>",
     "main": "src/index.js",
-    "keywords": [],
+    "keywords": [
+        "starters",
+        "cli",
+        "bootstrap",
+        "boilerplate"
+    ],
     "files": [
         "src",
         "dist",
@@ -19,7 +24,6 @@
         "inquirer": "^7.3.3",
         "rimraf": "^3.0.2",
         "npm": "^7.3.0",
-        "homedir": "^0.6.0",
         "npm-which": "^3.0.1"
     },
     "devDependencies": {},
