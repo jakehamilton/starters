@@ -5,6 +5,9 @@
     "license": "Apache-2.0",
     "author": "Jake Hamilton <jake.hamilton@hey.com>",
     "main": "src/index.js",
+    "publishConfig": {
+        "access": "public"
+    },
     "keywords": [
         "starters",
         "cli",

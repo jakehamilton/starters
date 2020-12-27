@@ -8,6 +8,9 @@
     "bin": {
         "starters": "bin/starters.js"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "keywords": [
         "starters",
         "cli",
