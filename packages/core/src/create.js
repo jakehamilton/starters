@@ -87,12 +87,11 @@ const create = async (
 
         try {
             await cmd.exec(
-                `${which.sync(
-                    "npm"
-                )} install --no-save --prefix ${cache} ${template}`,
+                `${which.sync("npm")} install --prefix ${cache} ${template}`,
                 {
                     encoding: "utf8",
                     cwd: cache,
+                    stdio: "ignore",
                 }
             );
         } catch (error) {
