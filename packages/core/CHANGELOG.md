@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.2.1
+
+### Fixes
+
+- only use pkg name for installation
+
+
 ## 1.2.0
 
 ### Features
