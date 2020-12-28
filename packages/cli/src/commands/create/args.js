@@ -6,8 +6,10 @@ const getArgs = () =>
         {
             ...rootArgs,
 
-            "--template": String,
+            "--name": String,
+            "-n": String,
 
+            "--template": String,
             "-t": "--template",
         },
         {

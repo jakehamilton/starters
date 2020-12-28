@@ -24,7 +24,7 @@ const command = async () => {
     }
 
     try {
-        await core.create(args._[1], args["--template"]);
+        await core.create(args._[1], args["--template"], args["--name"]);
     } catch (error) {
         log.error("Could not create project.");
         log.debug(error.message);

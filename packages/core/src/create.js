@@ -11,6 +11,7 @@ const misc = require("./util/misc");
 const create = async (
     where,
     template,
+    name = "",
     cache = path.resolve(require("os").homedir(), ".starters")
 ) => {
     const resolvedPath = path.resolveRelative(where);
@@ -41,7 +42,13 @@ const create = async (
             throw error;
         }
 
-        const configPath = path.resolve(resolvedPath, ".starter");
+        // @NOTE(jakehamilton): This should be removed once templates have been updated.
+        const legacyConfigPath = path.resolve(resolvedPath, ".starter");
+
+        const configPath =
+            fs.exists(legacyConfigPath) && fs.isDir(legacyConfigPath)
+                ? legacyConfigPath
+                : path.resolve(resolvedPath, ".starters");
 
         if (
             fs.exists(path.resolve(configPath, "index.js")) ||
@@ -59,6 +66,7 @@ const create = async (
                         fs: require("fs"),
                         rimraf: require("rimraf"),
                         where,
+                        name,
                     });
                     log.info("Configuration complete.");
                 } else {
@@ -110,6 +118,7 @@ const create = async (
                     fs: require("fs"),
                     rimraf: require("rimraf"),
                     where,
+                    name,
                 });
                 log.info("Configuration complete.");
             } else if (
@@ -122,6 +131,7 @@ const create = async (
                 return await create(
                     resolvedPath,
                     `git@github.com:${config.repository}`,
+                    name,
                     cache
                 );
             } else {

@@ -13,10 +13,15 @@ npm install --save @starters/core
 ```js
 const starters = require("@starters/core");
 
-await starters.create("/path/to/project", "my-template-name");
+await starters.create(
+    "/path/to/project",
+    "my-template-name",
+    "my-package-name",
+    "/my/cache"
+);
 ```
 
-### `starters.create(where, template)`
+### `starters.create(where, template [, name [, cache]])`
 
 This function creates a new project from a template. The `where` parameter is a path
 to the location that the project should be created at. The `template` parameter is either
@@ -30,3 +35,7 @@ my-npm-package
 
 git@github.com:my-user/my-project
 ```
+
+The `name` parameter specifies a package name that is passed to the template. The `cache`
+parameter is used to specify a directory to install NPM template packages to. Both of these
+parameters are optional.
