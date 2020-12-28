@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.2.0
+
+### Features
+
+- support file paths for templates
+
+
 ## 1.1.0
 
 ### Features
