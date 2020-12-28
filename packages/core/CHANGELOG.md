@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.1.0
+
+### Features
+
+- _(config)_: pass package name to template
+
+
 ## 1.0.2
 
 ### Fixes
