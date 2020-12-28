@@ -6,7 +6,7 @@
     "scripts": {},
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/jakehamilton/starter-empty.git"
+        "url": "git+https://github.com/jakehamilton/starters.git"
     },
     "keywords": [
         "javascript",
@@ -17,7 +17,7 @@
     "author": "Jake Hamilton <jake.hamilton@hey.com>",
     "license": "Apache-2.0",
     "bugs": {
-        "url": "https://github.com/jakehamilton/starter-empty/issues"
+        "url": "https://github.com/jakehamilton/starters/issues"
     },
-    "homepage": "https://github.com/jakehamilton/starter-empty#readme"
+    "homepage": "https://github.com/jakehamilton/starters#readme"
 }
