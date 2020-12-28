@@ -61,7 +61,7 @@ const create = async (
                 if (typeof config === "function") {
                     log.info("Running configuration script.");
                     await config({
-                        inquirer: require("inquirer"),
+                        inquirer: require("enquirer"),
                         render: require("render-in-place").default,
                         fs: require("fs"),
                         rimraf: require("rimraf"),
@@ -126,7 +126,7 @@ const create = async (
                 if (typeof config === "function") {
                     log.info("Running configuration script.");
                     await config({
-                        inquirer: require("inquirer"),
+                        inquirer: require("enquirer"),
                         render: require("render-in-place").default,
                         fs: require("fs"),
                         rimraf: require("rimraf"),
@@ -182,7 +182,7 @@ const create = async (
             if (typeof config === "function") {
                 log.info("Running configuration script.");
                 await config({
-                    inquirer: require("inquirer"),
+                    inquirer: require("enquirer"),
                     render: require("render-in-place").default,
                     fs: require("fs"),
                     rimraf: require("rimraf"),
