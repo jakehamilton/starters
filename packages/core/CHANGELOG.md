@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.3.0
+
+### Features
+
+- migrate to enquirer
+
+
 ## 1.2.1
 
 ### Fixes
