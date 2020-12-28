@@ -1,7 +1,7 @@
 const isSSH = (string) => {
     const regex = /\w+@[^\:]+:(?:.+)?/;
 
-    return string.match(regex);
+    return Boolean(string.match(regex));
 };
 
 module.exports = {

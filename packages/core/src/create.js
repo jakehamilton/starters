@@ -83,6 +83,71 @@ const create = async (
         } else {
             log.debug(`No configuration found in "${configPath}".`);
         }
+    } else if (
+        path.isPath(template) &&
+        (template.startsWith(".") || path.isAbsolute(template))
+    ) {
+        const dir = path.resolveRelative(template);
+
+        if (!fs.exists(dir)) {
+            throw new Error(`Directory "${dir}" does not exist.`);
+        }
+
+        if (!fs.isDir(dir)) {
+            throw new Error(`Directory "${dir}" does not exist.`);
+        }
+
+        try {
+            await cmd.exec(`cp -r ${dir} ${where}`, {
+                encoding: "utf8",
+                stdio: "ignore",
+            });
+        } catch (error) {
+            log.error(`Could not copy directory "${dir}".`);
+            throw error;
+        }
+
+        // @NOTE(jakehamilton): This should be removed once templates have been updated.
+        const legacyConfigPath = path.resolve(resolvedPath, ".starter");
+
+        const configPath =
+            fs.exists(legacyConfigPath) && fs.isDir(legacyConfigPath)
+                ? legacyConfigPath
+                : path.resolve(resolvedPath, ".starters");
+
+        if (
+            fs.exists(path.resolve(configPath, "index.js")) ||
+            fs.exists(path.resolve(configPath, "package.json"))
+        ) {
+            log.debug(`Found configuration in "${configPath}".`);
+            try {
+                const config = require(configPath);
+
+                if (typeof config === "function") {
+                    log.info("Running configuration script.");
+                    await config({
+                        inquirer: require("inquirer"),
+                        render: require("render-in-place").default,
+                        fs: require("fs"),
+                        rimraf: require("rimraf"),
+                        where,
+                        name,
+                    });
+                    log.info("Configuration complete.");
+                } else {
+                    throw new Error(
+                        `TypeError: Expected a function but got "${typeof config}".`
+                    );
+                }
+            } catch (error) {
+                log.error(
+                    `Could not import configuration from "${configPath}".`
+                );
+                throw error;
+            }
+        } else {
+            log.debug(`No configuration found in "${configPath}".`);
+        }
     } else {
         // NPM package
         const { name, version } = npm.parseNameWithVersion(template);
