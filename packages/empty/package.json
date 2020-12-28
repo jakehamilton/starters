@@ -1,0 +1,23 @@
+{
+    "name": "@starters/empty",
+    "version": "1.0.0",
+    "description": "Start your next JavaScript project!",
+    "main": "index.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jakehamilton/starter-empty.git"
+    },
+    "keywords": [
+        "javascript",
+        "starters",
+        "template",
+        "boilerplate"
+    ],
+    "author": "Jake Hamilton <jake.hamilton@hey.com>",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/jakehamilton/starter-empty/issues"
+    },
+    "homepage": "https://github.com/jakehamilton/starter-empty#readme"
+}
