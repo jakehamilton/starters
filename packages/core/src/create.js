@@ -150,7 +150,7 @@ const create = async (
         }
     } else {
         // NPM package
-        const { name, version } = npm.parseNameWithVersion(template);
+        const { name: pkgName, version } = npm.parseNameWithVersion(template);
 
         log.info("Installing package.");
 
@@ -173,7 +173,11 @@ const create = async (
         }
 
         try {
-            const config = require(path.resolve(cache, "node_modules", name));
+            const config = require(path.resolve(
+                cache,
+                "node_modules",
+                pkgName
+            ));
 
             if (typeof config === "function") {
                 log.info("Running configuration script.");
