@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.6.0
+
+### Features
+
+- add npm-which to template options
+
+
 ## 1.5.0
 
 ### Features
