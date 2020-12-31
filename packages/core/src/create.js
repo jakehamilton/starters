@@ -72,6 +72,7 @@ const create = async (
                         where,
                         name,
                         which,
+                        copy,
                         options,
                     });
                     log.info("Configuration complete.");
@@ -137,6 +138,7 @@ const create = async (
                         where,
                         name,
                         which,
+                        copy,
                         options,
                     });
                     log.info("Configuration complete.");
@@ -196,6 +198,7 @@ const create = async (
                     where,
                     name,
                     which,
+                    copy,
                     options,
                 });
                 log.info("Configuration complete.");
