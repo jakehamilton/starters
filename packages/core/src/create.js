@@ -1,4 +1,6 @@
+const copy = require("copy-dir");
 const which = require("npm-which")(process.cwd());
+const enquirer = require("enquirer");
 const kleur = require("kleur");
 const isUrl = require("is-url");
 const fs = require("./util/fs");
@@ -61,7 +63,8 @@ const create = async (
                 if (typeof config === "function") {
                     log.info("Running configuration script.");
                     await config({
-                        inquirer: require("enquirer"),
+                        inquirer: enquirer,
+                        enquirer,
                         render: require("render-in-place").default,
                         fs: require("fs"),
                         rimraf: require("rimraf"),
@@ -98,10 +101,7 @@ const create = async (
         }
 
         try {
-            await cmd.exec(`cp -r ${dir} ${where}`, {
-                encoding: "utf8",
-                stdio: "ignore",
-            });
+            copy.sync(dir, where);
         } catch (error) {
             log.error(`Could not copy directory "${dir}".`);
             throw error;
@@ -126,7 +126,8 @@ const create = async (
                 if (typeof config === "function") {
                     log.info("Running configuration script.");
                     await config({
-                        inquirer: require("enquirer"),
+                        inquirer: enquirer,
+                        enquirer,
                         render: require("render-in-place").default,
                         fs: require("fs"),
                         rimraf: require("rimraf"),
@@ -182,7 +183,8 @@ const create = async (
             if (typeof config === "function") {
                 log.info("Running configuration script.");
                 await config({
-                    inquirer: require("enquirer"),
+                    inquirer: enquirer,
+                    enquirer,
                     render: require("render-in-place").default,
                     fs: require("fs"),
                     rimraf: require("rimraf"),
