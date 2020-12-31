@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.5.0
+
+### Features
+
+- add options object for template usage
+
+
 ## 1.4.0
 
 ### Features
