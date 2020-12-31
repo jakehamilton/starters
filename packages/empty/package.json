@@ -1,6 +1,6 @@
 {
     "name": "@starters/empty",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Start your next JavaScript project!",
     "main": "index.js",
     "scripts": {},
