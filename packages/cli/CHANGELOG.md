@@ -1,5 +1,12 @@
 # Change Log
 
+## 2.2.0
+
+### Features
+
+- migrate to enquirer and support copy on windows
+
+
 ## 2.1.0
 
 ### Features
