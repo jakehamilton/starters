@@ -14,6 +14,7 @@ const create = async (
     where,
     template,
     name = "",
+    options = {},
     cache = path.resolve(require("os").homedir(), ".starters")
 ) => {
     const resolvedPath = path.resolveRelative(where);
@@ -70,6 +71,7 @@ const create = async (
                         rimraf: require("rimraf"),
                         where,
                         name,
+                        options,
                     });
                     log.info("Configuration complete.");
                 } else {
@@ -133,6 +135,7 @@ const create = async (
                         rimraf: require("rimraf"),
                         where,
                         name,
+                        options,
                     });
                     log.info("Configuration complete.");
                 } else {
@@ -190,6 +193,7 @@ const create = async (
                     rimraf: require("rimraf"),
                     where,
                     name,
+                    options,
                 });
                 log.info("Configuration complete.");
             } else if (
@@ -203,6 +207,7 @@ const create = async (
                     resolvedPath,
                     `git@github.com:${config.repository}`,
                     name,
+                    options,
                     cache
                 );
             } else {
