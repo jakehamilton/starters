@@ -71,6 +71,7 @@ const create = async (
                         rimraf: require("rimraf"),
                         where,
                         name,
+                        which,
                         options,
                     });
                     log.info("Configuration complete.");
@@ -135,6 +136,7 @@ const create = async (
                         rimraf: require("rimraf"),
                         where,
                         name,
+                        which,
                         options,
                     });
                     log.info("Configuration complete.");
@@ -193,6 +195,7 @@ const create = async (
                     rimraf: require("rimraf"),
                     where,
                     name,
+                    which,
                     options,
                 });
                 log.info("Configuration complete.");
