@@ -1,6 +1,6 @@
 {
     "name": "@starters/core",
-    "version": "1.6.0",
+    "version": "1.7.0",
     "description": "The core logic for managing templates.",
     "license": "Apache-2.0",
     "author": "Jake Hamilton <jake.hamilton@hey.com>",

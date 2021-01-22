@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.7.0
+
+### Features
+
+- pass through copy to template script
+
+
 ## 1.6.0
 
 ### Features
