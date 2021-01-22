@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.7.1
+
+### Chores
+
+- remove unused dependency
+
+
 ## 1.7.0
 
 ### Features
