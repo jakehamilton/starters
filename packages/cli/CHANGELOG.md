@@ -1,5 +1,12 @@
 # Change Log
 
+## 2.2.1
+
+### Fixes
+
+- update locks
+
+
 ## 2.2.0
 
 ### Features

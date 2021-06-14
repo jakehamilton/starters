@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.1.1
+
+### Fixes
+
+- update locks
+
+
 ## 1.1.0
 
 ### Features

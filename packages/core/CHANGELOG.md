@@ -1,5 +1,14 @@
 # Change Log
 
+## 1.7.2
+
+### Fixes
+
+- update locks
+
+- add missing dependency
+
+
 ## 1.7.1
 
 ### Chores
