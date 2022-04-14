@@ -1,5 +1,12 @@
 # Change Log
 
+## 2.3.0
+
+### Features
+
+- add littlelog v3
+
+
 ## 2.2.1
 
 ### Fixes
