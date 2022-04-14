@@ -1,3 +1,3 @@
-const littlelog = require("@littlethings/log");
+const { default: littlelog } = require("@littlethings/log");
 
-module.exports = littlelog.create("@starters/core");
+module.exports = littlelog.child("Starters").child("Core");

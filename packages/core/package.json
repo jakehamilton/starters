@@ -20,7 +20,7 @@
         "README.md"
     ],
     "dependencies": {
-        "@littlethings/log": "^2.3.0",
+        "@littlethings/log": "^3.0.1",
         "copy-dir": "^1.3.0",
         "enquirer": "^2.3.6",
         "is-url": "latest",
